@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Minda's Milestone project pre-Data Incubator, Fall 2017.">
+    <meta name="author" content="@minan05">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <title>Stock Data Lookup Demo_MAguhob</title>
+
+    <!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom CSS for navbar-->
+    <style>
+    body {
+      padding-top: 70px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-1">
+          <span class="sr-only">Toggle navigation</span>
+          </button>
+          <span class="navbar-brand">PLOT 30 DAYS</span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-1">
+         <ul class="nav navbar-nav">
+           <li class="nav-item active">
+             <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+           </li>
+<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">Docs</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="http://blog.thedataincubator.com/2015/09/painlessly-deploying-data-apps-with-bokeh-flask-and-heroku/" target="_blank">Project</a>
+                <br>
+                <a class="dropdown-item" href="https://github.com/thedataincubator/flask-framework" target="_blank">DI Github</a>
+                <br>
+                <a class="dropdown-item" href="https://www.thedataincubator.com/fellows/dashboard.html" target="_blank">Dashboard</a>
+                <br>
+                <a class="dropdown-item" href="https://www.thedataincubator.com/fellows/onboarding.html" target="_blank">DI Onboarding</a>
+                <br>
+                <a class="dropdown-item" href="https://www.thedataincubator.com/12day.html" target="_blank">12-day</a>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">About</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown02">
+                <a class="dropdown-item" href="https://www.thedataincubator.com/fellowship.html" target="_blank">DI Fellow Info</a>
+                <br>
+                <a class="dropdown-item" href="https://www.thedataincubator.com/fellows/manage.html" target="_blank">Minda's DI Profile</a>
+                <br>
+                <a class="dropdown-item" href="https://storage.googleapis.com/thedataincubator/fellows/201709/resumes/150517317162-minda_aguhob.pdf" target="_blank">About Minda (CV)</a>
+                <br>
+                <a class="dropdown-item" href="https://www.thedataincubator.com/fellows/milestone_project.html" target="_blank">Minda's DI data</a>
+                <br>
+                <a class="dropdown-item" href="https://www.github.com/minan05" target="_blank">Minda's Github</a>
+
+        </div>
+      </div>
+    </nav>
+<!--table -->
+<table style="width:100%">
+  <tr>
+    <td>
+      <!-- form -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-left">
+          <form id='input' method='post' action='index'>
+          <p>Ticker: <input type='text' name='ticker' placeholder='GOOG' /></p>
+          <p>
+          <input type="checkbox" name='features' value='close' /> Closing price<br>
+          <input type="checkbox" name='features' value='adj_close' /> Adj closing price<br>
+          </p>
+          <p><input type="submit" value="Submit"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <object type="text/html" data="graph.html">
+    </object>
+  </tr>
+</table>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<!--<!doctype html>-->
+<!--<title>Stock Data Lookup - Minda A</title>-->
+<!--<link rel=stylesheet type=text/css href='{{ url_for('static', filename='style_lulu.css')}}'>-->
+<!--<div class=page>-->
+  <!--<h4>Plot 30 days</h4>-->
+  <!--<form id='tickPick' method="post">-->
+    <!--Ticker:-->
+    <!--<br>-->
+    <!--<input type="text" name="TickerChoice" value="TSLA">-->
+    <!--<br>-->
+    <!--<input type='submit' value='Submit' />-->
+<!--</div>-->
