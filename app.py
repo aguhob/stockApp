@@ -8,6 +8,8 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.embed import file_html
 from bokeh.resources import CDN
 
+quandl.ApiConfig.api_key = "DXbRedsMTaKx_FB623tY"
+
 app = Flask(__name__)  # create the application instance :)
 app.vars = {}
 
@@ -30,7 +32,7 @@ def index():
         p = figure(plot_width=400, plot_height=400,
                    x_axis_type='datetime', x_axis_label="Last 30 days",
                    y_axis_label=app.vars["ticker"] + " Price")
-        p.line(stockDF.index.values.tolist(), stockDF['Close'].values.tolist())
+        p.line(stockDF.index.values.tolist(), stockDF['Close'].values.tolist(), legend = "close $", line_width = 2)
         return file_html(p, CDN, "myplot")
 
 # from flask import Flask, render_template

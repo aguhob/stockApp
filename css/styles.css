@@ -1,0 +1,13 @@
+body {
+  background-color: red;
+}
+
+#myBox {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+#icon {
+  font-size: 200px;
+}

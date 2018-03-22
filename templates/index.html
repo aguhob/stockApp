@@ -1,12 +1,222 @@
-<!doctype html>
-<title>Plot 30 days</title>
-<link rel=stylesheet type=text/css href='{{ url_for('static', filename='style_lulu.css')}}'>
-<div class=page>
-  <h4>Plot 30 days</h4>
-  <form id='tickPick' method="post">
+<!DOCTYPE html>
+<html>
+<title>Stock Recs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/static/elliott-wave.gif');
+    min-height: 100%;
+}
+</style>
+<body>
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Elliott Wave Theory</a>
+    <a href="#ticker" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Calculate</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">How it works</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>WIN</b></h1>
+    <h3>The stock market</h3>
+    <img src="/w3images/profile_girl.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <a href = "#ticker"><i class="fa fa-download"></i> Click
+      </a></button>
+  </header>
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h1 class="w3-text-grey">About Elliott Wave</h1>
+    <hr class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/static/elliott-wave.gif" style="width:100%">
+       </div>
+
+      <div class="w3-half">
+        <img src="/static/up-down.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+ 
+      <h3>Waves in nature</h3>
+          
+      <p>Waves occur in nature, and usually in response to the energy of waves before it. The fibonacci sequence is an expression of this pattern: 0, 1 are added for the next number in the sequence, 1. 
+          <br />1 and 1 are 2, and so on. 0, 1, 1, 2, 3, 5... </p>
+ 
+      <h3>How waves behave</h3>
+      <p>The wave diagrams above illustrate Elliott Wave's theory of how wave impulses behave. They start, back off slightly, then accelerate. Finally, they fade.</p>
+      <p>Then it starts over.</p>
+      <p>The pattern can go up OR down. And it is fractyl, meaning it's part of a larger "meta-" wave (going up OR down!) and also composed of small "underlying" waves.</p> 
+ 
+      <h3>A fibonacci analysis</h3>
+      <p>Note the points labeled "1", "2", etc.</p> 
+      <p>"Wave 1" is a wave that ends at "1." Note the proportion of this wave to "Wave 2", and to "Wave 3." (Note how long Wave 3 goes - this is the pattern we seek, upward OR downward.)</p>
+          <br />Elliott Wave says that whatever the wave pattern, one can zoom in or out of a wave, to adjust one's "scope" in order to discover an underlying or meta-fibonacci pattern. The tricky thing is determining the correct scope, to determine whether the pattern is heading up or down.
+      <p>Our calculator determines whether a Wave 3 is occurring, in what direction. It then generates a recommendation to buy or sell.</p>
+
+      <br />
+       <h3>Buy & sell stock</h3>
+ 
+      <hr class="w3-opacity">
+    
+      <p>See whether a company stock's likely to go up, down, or stay the same. Analyze its wave patterns using Elliott Wave Theory using our calculator. 
+          <br />It also works for other wave phenomena, like cryptocurrency prices or even your income.</p>
+
+          <br />
+          <br />  
+<!--
     Ticker:
     <br>
     <input type="text" name="TickerChoice" value="TSLA">
     <br>
     <input type='submit' value='Submit' />
+-->
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/static/400x200.png" style="width:100%">
+       </div>
+
+      <div class="w3-half">
+        <img src="/static/up-down.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->      
+      
+ 
+    
+    <!-- Grid for pricing tables -->
+
+<form id='tickPick' method="post">
+    <h3 class="w3-padding-16"></h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+          <a id = "ticker"><li class="w3-dark-grey w3-xlarge w3-padding-32"><i>Company stock $</i></li>
+          <li class="w3-padding-16">
+            <span class="w3-opacity"><input type="text" style="text-align: center" name="TickerChoice" placeholder="Enter stock symbol">
+                <br />Submit wave # below 
+          <li class="w3-padding-16"><input type="text" style="text-align: center" name="W1" placeholder="Enter Wave 1"></li>
+          <li class="w3-padding-16"><input type="text" style="text-align: center" name="W2" placeholder="Enter Wave 2"></li>
+          <li class="w3-padding-16"><input type="text" style="text-align: center" name="W3" placeholder="Enter Wave 3"></li>
+          <li class="w3-padding-16">Recommendation: </li>
+   </span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Submit</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+          <li class="w3-black w3-xlarge w3-padding-32">Wave Type</li>
+          <li class="w3-padding-16">
+            <h2>Output a wave</h2>
+            <span class="w3-opacity">Then determine:</span>
+          </li>
+          <li class="w3-padding-16">Length of Wave 1</li>
+          <li class="w3-padding-16">Length of Wave 2</li>
+          <li class="w3-padding-16">Length of Wave 3</li>
+          <li class="w3-padding-16">
+            <span class="w3-opacity">Fibonacci-based recommendation</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">Calculate</li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+      <p><i>Disclaimer. The information provided here is for informational purposes only. It should not be considered legal or financial advice.</i></p>
+  
+ 
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+    <h2>Minda Aguhob</h2>
+    <h3>Fellow, The Data Incubator</h3><hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> San Francisco, CA</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: 917-566-8223 </p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: <a href="mailto:maguhob@gmail.com">maguhob@gmail.com</a></p>
+    </div>
+  <br />
+        <br />
+        <br />
+    <center>
+    <a href="https://vytality.co" ><img src="static/vytality2.png" style="width:100px;" alt="<3"></a>
+<br />
+  <div id="formm">  
+    <p style="text-align:center;">&copy; 2018 by Minda Aguhob</p>
+    </div>
+  <br />
+</center>
+      
+<!-- END PAGE CONTENT -->
 </div>
+
+ <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <a href="http://www.twitter.com/nerdfox"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="http://www.linkedin.com/maguhob"><i class="fa fa-linkedin w3-hover-opacity"></i>
+<!--    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>-->
+  <!-- End footer -->
+  </footer>
+  
+<!-- END PAGE CONTENT -->
+</div>
+    
+<script>
+    // Open and close sidebar
+function openNav() {
+    document.getElementById("mySidebar").style.width = "60%";
+    document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>

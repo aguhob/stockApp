@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<title>Detect Depression</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('static/pexels-photo-819635.jpeg');
+    min-height: 100%;
+}
+</style>
+<body>
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#detect" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Detect depression</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Model</a>
+    <a href="https://storage.googleapis.com/thedataincubator/fellows/201801/resumes/151503589387-minda_aguhob.pdf" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Minda Aguhob CV</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Detect Mood</b></h1>
+      <p>Minda Aguhob, Fellow</p>
+      <p>The Data Incubator</p>
+      <br />
+<!--
+      <img src="/w3images/profile_girl.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="/w3images/profile_girl.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+-->
+      
+      
+      
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+        <a href="#detect"><i class="fa fa-download"></i> Click</a>
+    </button>
+  </header>
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-grey">Be mindful of those you love</h2>
+    <hr class="w3-opacity">
+ 
+      <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="static/Dollarphotoclub_44843322.jpg" style="width:100%">
+        <img src="static/pexels-photo-818819.jpeg" style="width:100%">
+        <img src="static/pexels-photo-755028.jpeg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="static/pexels-photo-819635.jpeg" style="width:100%">
+        <img src="static/pexels-photo-318378.jpeg" style="width:100%">
+        <img src="static/pexels-photo-394781.jpeg" style="width:100%">
+        <img src="" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>About depression</h2>
+    <hr class="w3-opacity">
+    <p>Depression is an illness that is often hidden and under the surface. Many families are already worried about the physical health of their loved ones, and depression intensifies everything. How can we help?
+      <p>The app I developed for <b></b><a href="https://vytality.co">Vytality Health</a></b> gives you ideas. From the best places to take your loved one, to activities and conversation prompts that can improve mood or shed light - you can be a hero in someone's health story. Vytality's social health mobile app has a unique, patented ability to pinpoint, based on mobile sensors and app generated data, who in the community may be suffering from depression.
+    </p>
+    <br />
+    <br />
+    <h2>The model</h2>
+    <hr class="w3-opacity">
+    <p>Vytality's depression detector estimates a person's emotional state based on heart rate variability and a few other factors (many wearable devices, such as the Apple Watch 3, provide this data). HRV is a measure of the body's autonomic nervous system. I created a model based on data from an NIH sleep heart study of nearly 500 patients, utilizing logistic regression, confirmed with other models, to predict depression.</p>
+    <p><i><b>[However, this web app is an extremely simplified version of Vytality's and should not be used for an actual medical diagnosis.]</b></i></p> 
+    <p>As seen below, this simple logistic regression model provides an odds ratio ( <b>y-axis</b> ) for a given HRV, showing the odds of being in a downhearted or blue state of depression ( <b>x axis</b> = HRV. Data is standardized between 0 and 1 ). </p>
+    <br /><img src="static/Sigmoid.png">
+    <br />
+    <br />
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <a id="cv"><a href="https://storage.googleapis.com/thedataincubator/fellows/201801/resumes/151503589387-minda_aguhob.pdf"><i class="fa fa-download"></i> Download my CV</a></a>
+    </button>
+    <br />
+    <br />
+
+<!--
+        <form method="post">
+                <input type="text" style="width:200px;text-align: center;" name="hr" placeholder="Enter HRV (-20 to 130)">
+            <tr><input type="submit" value="Submit"></tr>
+        </form>
+-->
+
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16">How are they doing?</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+      <form method="post"> 
+        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+          <a id="detect"></a><li class="w3-dark-grey w3-xlarge w3-padding-32"><i>Your loved one</i></li>
+          <li class="w3-padding-16">Age</li>
+          <li class="w3-padding-16">Race</li>
+          <li class="w3-padding-16">Health</li>
+          <li class="w3-padding-16">Gender</li>
+          <li class="w3-padding-16">    
+                  <h2><input type="text" style="width:200px;text-align: center;" name="hr" placeholder="[Enter HRV]"></h2>
+            <span class="w3-opacity">-30 to 130</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+        
+<button class="w3-button w3-white w3-padding-large w3-hover-black">Press submit</button>
+          </li>
+            </ul>
+        </form>
+          </div>
+
+      <div class="w3-half">
+          <form method="post"> 
+      <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+          <li class="w3-black w3-xlarge w3-padding-32">Fred S.</li>
+          <li class="w3-padding-16">78 years old</li>
+          <li class="w3-padding-16">Former engineer</li>
+          <li class="w3-padding-16">Heart attack >1 yr ago</li>
+          <li class="w3-padding-16">Male</li>
+          <li class="w3-padding-16">
+              <h2><input type="text" style="width:200px;text-align: center;" name="hr" value=-25></h2>
+            <span class="w3-opacity">HRV</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">How is he doing?</button>
+          </li>
+        </ul>
+            </form>
+        </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+    
+  <!-- End About Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+    <h2>Minda Aguhob</h2>
+    <h3>Fellow, The Data Incubator</h3><hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> San Francisco, CA</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: 917-566-8223 </p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: <a href="mailto:maguhob@gmail.com">maguhob@gmail.com</a></p>
+    </div>
+  <br />
+        <br />
+        <br />
+    <center>
+    <a href="https://vytality.co" ><img src="static/vytality.png" style="width:100px;" alt="<3"></a>
+<br />
+  <div id="formm">  
+    <p style="text-align:center;">&copy; 2018 by Vytality Health</p>
+    </div>
+  <br />
+</center>
+      
+<!-- END PAGE CONTENT -->
+</div>
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Open and close sidebar
+function openNav() {
+    document.getElementById("mySidebar").style.width = "60%";
+    document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
